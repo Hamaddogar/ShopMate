@@ -15,10 +15,12 @@ const forgot= require('./router/forgot');
 const resetpassword= require('./router/resetpassword');
 const product= require('./router/product');
 const logout= require('./router/logout');
+const userProduct= require('./router/userProduct');
+
 const  passport = require('passport');
 const bodyparser = require("body-parser"); 
 
-const  Product = require('./models/ProductSceema');
+
 
 
 
@@ -40,22 +42,12 @@ app.use("/api",login)
 app.use("/api",forgot)
 app.use("/api",resetpassword)
 app.use("/api",product)
+app.use("/api",userProduct)
+
 app.use("/api",logout)
 
 
 
-app.get("/CatigorieShow", (req, res) => {
-    let product = new Product();
-    Product.find({}, (err, userget) => {
-      if (err) {
-        return res.json({ success: false, err: err })
-      }
-  
-      res.json({ success: true, data: userget })
-    })
-  
-  
-  })
     
 
    

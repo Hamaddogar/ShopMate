@@ -14,7 +14,7 @@ class UserProduct extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:8080/CatigorieShow")
+    fetch("http://localhost:8080/api/productShow")
       .then(response => response.json())
       .then((res) => {
         console.log(res);
